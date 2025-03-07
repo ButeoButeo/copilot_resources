@@ -8,4 +8,7 @@ export function checkPassword(password) {
   if(password.length > 20) {
     throw new Error('Password must be at most 20 characters long');
   }
+  if(!/[a-z]/.test(password)) {
+    throw new Error('Password must contain at least one lowercase letter');
+  }
 }
